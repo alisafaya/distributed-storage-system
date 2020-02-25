@@ -108,7 +108,7 @@ func (t *Peer) FindSuccessor(id uint32, peer *Peer) error {
 		peer.Ip = Me.Ip
 		peer.Port = Me.Port
 		return nil
-	} else if (id > Me.Id && id <= Succ.Id) || Succ.Id == Me.Id {
+	} else if (id > Me.Id && id <= Succ.Id) || Succ.Id <= Me.Id {
 		peer.Id = Succ.Id
 		peer.Ip = Succ.Ip
 		peer.Port = Succ.Port
