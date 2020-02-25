@@ -38,7 +38,7 @@ func Hash(s string) uint32 {
 	// https://stackoverflow.com/questions/13582519/how-to-generate-hash-number-of-a-string-in-go#13582881
 	h := fnv.New32a()
 	h.Write([]byte(s))
-	return h.Sum32()
+	return h.Sum32() % 1024
 }
 
 func GetOutboundIP() string {
